@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <title>アベレージラリー用計算サイト</title>
+  </head>
+  <body>
+    <div id="function_1">
+      <h3>機能１</h3>
+      <p>３つの時刻入力から時間を計算</p>
+      <div>
+        入力
+        <div>
+          <label for="input_time1">通過時刻１:</label>
+          <input id="input_time1" class="inputs" type="number" name="time1" min="0" step="1" placeholder="hhmmss">
+        </div>
+        <div>
+          <label for="input_time2">通過時刻２:</label>
+          <input id="input_time2" class="inputs" type="number" name="time2" min="0" step="1" placeholder="hhmmss">
+        </div>
+        <div>
+          <label for="input_time3">レスコンカードの時間:</label>
+          <input id="input_time3" class="inputs" type="number" name="time3" min="0" step="1" placeholder="mmss">
+        </div>
+      </div>
+      <p>
+        出力<br>
+        所要時間:<span id="output1" class="outputs">--</span>
+      </p>
+    </div>
+    <div id="function_2">
+      <h3>機能２</h3>
+      <p>ある距離を異なる速度で走ったときの時間差を計算</p>
+      <div>
+        入力
+        <div>
+          <label for="input_distance">距離:</label>
+          <input id="input_distance" class="inputs" type="number" name="distance" min="0" step="0.001" placeholder="[km]">
+        </div>
+        <div>
+          <label for="input_speed1">速度１:</label>
+          <input id="input_speed1" class="inputs" type="number" name="speed1" min="0" step="1" placeholder="[km/h]">
+        </div>
+        <div>
+          <label for="input_speed2">速度２:</label>
+          <input id="input_speed2" class="inputs" type="number" name="speed2" min="0" step="1" placeholder="[km/h]">
+        </div>
+      </div>
+      <p>
+        出力<br>
+        所要時間１:<span id="output2-1" class="outputs">--</span><br>
+        所要時間２:<span id="output2-2" class="outputs">--</span><br>
+        時間差:<span id="output2-3" class="outputs">--</span>
+      </p>
+    </div>
+  </body>
+  <script src="scripts/main.js"></script>
+</html>
