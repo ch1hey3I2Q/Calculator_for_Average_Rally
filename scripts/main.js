@@ -167,7 +167,7 @@ function output(name) {
 
 const input = document.querySelectorAll("input");
 for (let i = 0; i < input.length; i++) {
-    input[i].addEventListener("input", (e) => {
+    input[i].addEventListener("keypress", (e) => {
         document.getElementbyId("output1").textContent = 'a';
         switch (e.key) {
             case "ArrowUp":
@@ -181,6 +181,7 @@ for (let i = 0; i < input.length; i++) {
         }
     })
 }
+
 
 
 
