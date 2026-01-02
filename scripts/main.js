@@ -167,9 +167,9 @@ function output(name) {
 
 const input = document.querySelectorAll("input");
 for (let i = 0; i < input.length; i++) {
-    input[i].addEventListener("keypress", (e) => {
-        document.getElementbyId("output1").textContent = 'a';
-        switch (e.key) {
+    input[i].addEventListener("keydown", (e) => {
+        document.getElementById("output1").textContent = e.code;
+        switch (e.code) {
             case "ArrowUp":
             case "ArrowDown":
                 e.preventDefault();
@@ -181,8 +181,5 @@ for (let i = 0; i < input.length; i++) {
         }
     })
 }
-
-
-
 
 
