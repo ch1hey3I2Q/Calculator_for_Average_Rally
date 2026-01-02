@@ -13,18 +13,20 @@
       <p>３つの時刻入力から時間を計算</p>
       <div>
         入力
-        <div>
-          <label for="input_time1">通過時刻１:</label>
-          <input id="input_time1" class="inputs" type="number" name="time1" min="0" step="1" placeholder="hhmmss">
-        </div>
-        <div>
-          <label for="input_time2">通過時刻２:</label>
-          <input id="input_time2" class="inputs" type="number" name="time2" min="0" step="1" placeholder="hhmmss">
-        </div>
-        <div>
-          <label for="input_time3">レスコンカードの時間:</label>
-          <input id="input_time3" class="inputs" type="number" name="time3" min="0" step="1" enterkeyhint="go" placeholder="hhmmss">
-        </div>
+        <form>
+          <div>
+            <label for="input_time1">通過時刻１:</label>
+            <input id="input_time1" class="inputs" type="number" name="time1" min="0" step="1" placeholder="hhmmss">
+          </div>
+          <div>
+            <label for="input_time2">通過時刻２:</label>
+            <input id="input_time2" class="inputs" type="number" name="time2" min="0" step="1" placeholder="hhmmss">
+          </div>
+          <div>
+            <label for="input_time3">レスコンカードの時間:</label>
+            <input id="input_time3" class="inputs" type="number" name="time3" min="0" step="1" enterkeyhint="go" placeholder="hhmmss">
+          </div>
+        </form>
       </div>
       <p>
         出力<br>
@@ -59,4 +61,3 @@
   </body>
   <script src="scripts/main.js"></script>
 </html>
-
