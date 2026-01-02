@@ -176,11 +176,12 @@ for (let i = 0; i < input.length; i++) {
             case "Enter":
                 if (e.target.id === "input_time3") {
                     // e.preventDefault();
-                    e.target.focus();
+                    // e.target.focus();
                 }
         }
     })
 }
+
 
 
 
