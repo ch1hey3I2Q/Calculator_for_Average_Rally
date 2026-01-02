@@ -1,6 +1,6 @@
 const datas = {};
 const output_sec = {"output1":null, "output2-1":null, "output2-2":null, "output2-3":null};
-const input_errer = {"output1":false, "output2-1":false, "output2-2":false, "output2-3":false};
+const input_errer = {"time1":false, "time2":false, "time3":false, "distance":false, "speed1":false, "speed2":false};
 
 const inputs = document.getElementsByClassName("inputs");
 for (let i = 0; i < inputs.length; i++) {
@@ -18,11 +18,11 @@ for (let i = 0; i < inputs.length; i++) {
                     const second = Number(String(e.target.value.substring(4, 6))) <= 59;
                     
                     if (hour && minute && second) {
-                        input_errer["output1"] = false;
+                        input_errer[e.target.name] = false;
                         datas[e.target.name] = to_Sec(e.target.value);
                         e.target.style.color = "black";
                     } else {
-                        input_errer["output1"] = true;
+                        input_errer[e.target.name] = true;
                         datas[e.target.name] = null;
                         e.target.style.color = "red";
                     }
@@ -87,7 +87,7 @@ function output(name) {
         case "time2":
         case "time3":
             const output = document.getElementById("output1");
-            if (datas["time1"] !== null && datas["time2"] !== null && input_errer["output1"] === false) {
+            if (datas["time1"] !== null && datas["time2"] !== null && !(input_errer["time1"] || input_errer["time2"] || input_errer["time3"])) {
                 output_sec["output1"] = datas["time1"] - datas["time2"] - datas["time3"];
                 let text = '';
 
@@ -103,7 +103,7 @@ function output(name) {
                 text += minute + "分" + second + "秒";
                 
                 output.textContent = text;
-            } else if (input_errer["output1"] === true) {
+            } else if (input_errer["time1"] || input_errer["time2"] || input_errer["time3"]) {
                 output.textContent = 'Errer';
                 output.style.color = "red";
             } else {
