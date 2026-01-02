@@ -103,6 +103,9 @@ function output(name) {
                 text += minute + "分" + second + "秒";
                 
                 output.textContent = text;
+            } else if (input_errer["output1"] === true) {
+                output.textContent = 'Errer';
+                output.style.color = "red";
             } else {
                 output.textContent = '--';
                 output.style.color = "blue";
