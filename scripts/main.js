@@ -173,6 +173,10 @@ for (let i = 0; i < input.length; i++) {
             case "ArrowUp":
             case "ArrowDown":
                 e.preventDefault();
+            case "Enter":
+                if (e.target.id === "input_time3") {
+                    e.preventDefault();
+                }
         }
     })
 }
