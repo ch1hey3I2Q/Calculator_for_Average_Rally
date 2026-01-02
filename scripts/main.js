@@ -175,7 +175,8 @@ for (let i = 0; i < input.length; i++) {
                 e.preventDefault();
             case "Enter":
                 if (e.target.id === "input_time3") {
-                    e.preventDefault();
+                    // e.preventDefault();
+                    e.target.focus();
                 }
         }
     })
