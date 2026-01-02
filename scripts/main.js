@@ -28,7 +28,6 @@ for (let i = 0; i < inputs.length; i++) {
                     }
                 } else {
                     datas[e.target.name] = null;
-                    console.log('A');
                 }
                 break;
             case "distance":
@@ -169,7 +168,7 @@ function output(name) {
 const input = document.querySelectorAll("input");
 for (let i = 0; i < input.length; i++) {
     input[i].addEventListener("keydown", (e) => {
-        document.getElementbyId("output1").textContent = e.key;
+        document.getElementbyId("output1").textContent = 'a';
         switch (e.key) {
             case "ArrowUp":
             case "ArrowDown":
@@ -182,5 +181,6 @@ for (let i = 0; i < input.length; i++) {
         }
     })
 }
+
 
 
