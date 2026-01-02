@@ -168,23 +168,10 @@ function output(name) {
 const input = document.querySelectorAll("input");
 for (let i = 0; i < input.length; i++) {
     input[i].addEventListener("keydown", (e) => {
-        document.getElementById("output1").textContent = (e.key === 'Enter');
         switch (e.key) {
             case "ArrowUp":
             case "ArrowDown":
                 e.preventDefault();
-            case "Enter":
-                if (e.target.id === "input_time3") {
-                    // e.preventDefault();
-                    // e.target.focus();
-                }
         }
     })
 }
-
-
-
-
-
-
-
