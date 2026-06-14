@@ -87,7 +87,11 @@ function to_hhmmss(sec, mode="h,m,s") {
         if (mode === "m,s") {
             return [minute, second];
         } else if (mode === "mmss") {
-            return ('00' + minute).slice(-2) + ('00' + second).slice(-2);
+            if (second % 1 === 0) {
+                return ('00' + minute).slice(-2) + ('00' + second).slice(-2);
+            } else {
+                return ('00' + minute).slice(-2) + ('00' + Math.floor(second)).slice(-2) + (second % 1);
+            }
         }
     }
 }
