@@ -164,7 +164,7 @@ function output(name) {
             if (datas["distance"] !== null) {
                 if (name !== "speed2") {
                     if (datas["speed1"] !== null && datas["speed1"] !== 0) {
-                        output_sec["output2-1"] = Math.round(datas["distance"] / (datas["speed1"] / 3600));
+                        output_sec["output2-1"] = Math.floor(datas["distance"] / (datas["speed1"] / 3600) * 10) / 10;
                         const [minute, second] = to_hhmmss(output_sec["output2-1"], "m,s");
                         
                         const text = minute + "分" + second + "秒";
@@ -177,7 +177,7 @@ function output(name) {
 
                 if (name !== "speed1") {
                     if (datas["speed2"] !== null && datas["speed2"] !== 0) {
-                        output_sec["output2-2"] = Math.round(datas["distance"] / (datas["speed2"] / 3600));
+                        output_sec["output2-2"] = Math.floor(datas["distance"] / (datas["speed2"] / 3600) * 10) / 10;
                         const [minute, second] = to_hhmmss(output_sec["output2-2"], "m,s");
                         
                         const text = minute + "分" + second + "秒";
