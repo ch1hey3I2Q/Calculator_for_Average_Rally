@@ -90,7 +90,7 @@ function to_hhmmss(sec, mode="h,m,s") {
             if (second % 1 === 0) {
                 return ('00' + minute).slice(-2) + ('00' + second).slice(-2);
             } else {
-                return ('00' + minute).slice(-2) + ('00' + Math.floor(second)).slice(-2) + (second % 1);
+                return ('00' + minute).slice(-2) + ('00' + Math.floor(second)).slice(-2) + Math.floor((second % 1) * 10) / 10;
             }
         }
     }
