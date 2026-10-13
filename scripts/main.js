@@ -87,11 +87,7 @@ function to_hhmmss(sec, mode="h,m,s") {
         if (mode === "m,s") {
             return [minute, second];
         } else if (mode === "mmss") {
-            if (second % 1 === 0) {
-                return ('00' + minute).slice(-2) + ('00' + second).slice(-2);
-            } else {
-                return ('00' + minute).slice(-2) + ('00' + Math.floor(second)).slice(-2) + Math.floor((second % 1) * 10) / 10;
-            }
+            return ('00' + minute).slice(-2) + ('00' + second).slice(-2);
         }
     }
 }
@@ -165,13 +161,14 @@ function output(name) {
             const output2_1 = document.getElementById("output2-1");
             const output2_2 = document.getElementById("output2-2");
             const output2_3 = document.getElementById("output2-3");
+            const digit = 3;
             if (datas["distance"] !== null) {
                 if (name !== "speed2") {
                     if (datas["speed1"] !== null && datas["speed1"] !== 0) {
                         output_sec["output2-1"] = datas["distance"] / (datas["speed1"] / 3600);
                         const [minute, second] = to_hhmmss(output_sec["output2-1"], "m,s");
                         
-                        const text = minute + "分" + second + "秒";
+                        const text = minute + "分" + Math.trunc(second * Math.pow(10, digit)) / Math.pow(10, digit) + "秒";
                         output2_1.textContent = text;
                     } else {
                         output_sec["output2-1"] = null;
@@ -184,7 +181,7 @@ function output(name) {
                         output_sec["output2-2"] = datas["distance"] / (datas["speed2"] / 3600);
                         const [minute, second] = to_hhmmss(output_sec["output2-2"], "m,s");
                         
-                        const text = minute + "分" + second + "秒";
+                        const text = minute + "分" + Math.trunc(second * Math.pow(10, digit)) / Math.pow(10, digit) + "秒";
                         
                         output2_2.textContent = text;
                     } else {
@@ -207,7 +204,7 @@ function output(name) {
 
                     const [minute, second] = to_hhmmss(output_sec["output2-3"], "m,s");
                     
-                    text += minute + "分" + second + "秒";
+                    text += minute + "分" + Math.trunc(second * Math.pow(10, digit)) / Math.pow(10, digit) + "秒";
                     output2_3.textContent = text;
                 } else {
                     output2_3.textContent = '--';
